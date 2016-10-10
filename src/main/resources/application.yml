@@ -6,15 +6,15 @@ logging:
     level:
         org.hibernate: WARN
         org.springframework: WARN
-    file: RouteMonitor.log
+    file: Sisyphus.log
 
 # Spring settings
 spring:
     profiles.active: master
     datasource:
-        url: jdbc:mysql://127.0.0.1:3306/{yourDB}
-        username: admin
-        password:
+        url: jdbc:mysql://127.0.0.1:3306/{yourDB}?characterEncoding=utf8
+        username: {username}
+        password: {pasword}
     jpa:
         show-sql: false
         hibernate:

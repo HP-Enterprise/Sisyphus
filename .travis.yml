@@ -17,7 +17,7 @@ before_install:
 
 before_script:
     - mysql -e 'CREATE DATABASE Sisyphus CHARACTER SET = utf8;'
-    - gradle flywayMigrate -Pflyway.url=jdbc:mysql://127.0.0.1:3306/Sisyphus -Pflyway.user=travis -x testClasses
+    - gradle -Pflyway.url=jdbc:mysql://127.0.0.1:3306/Sisyphus flywayMigrate -Pflyway.user=travis -x testClasses
 
 script:
     - gradle check -Dspring.profiles.active=travis -x classes

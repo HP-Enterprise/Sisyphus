@@ -1,0 +1,5 @@
+rootProject.name = 'Sisyphus'
+include 'User'
+include 'Vehicle'
+include 'Shared'
+include 'Abstract'

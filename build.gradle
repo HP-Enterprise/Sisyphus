@@ -29,6 +29,16 @@ dependencies {
     runtime("mysql:mysql-connector-java:5.1.+")
 }
 
+flyway{
+    def skippedProjects = ['Abstract', 'Shared']
+    List<String> scripts = []
+    for(proj in subprojects){
+        if(skippedProjects.contains(proj.name)) continue
+        scripts.add("filesystem:" + proj.name + "/src/main/resources/db/migration");
+    }
+    locations = scripts
+}
+
 run {
     systemProperties System.getProperties()
 }
